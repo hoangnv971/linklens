@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Link lens",
+    "description": "preview website when hover",
+    "version": "1.0",
+    "action": {
+      "default_popup": "app.html",
+      "default_icon": "icon.png"
+    },
+    "permissions": [
+        "storage"
+    ],
+    "background": {
+        "service_worker": "scripts/background/index.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["scripts/content/index.js"]
+        }
+    ]
+  }
